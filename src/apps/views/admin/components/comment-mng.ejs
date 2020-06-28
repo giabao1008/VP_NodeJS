@@ -1,0 +1,18 @@
+<!--	Comments List	-->
+      <% for ( let comment of comments) {%>
+  
+        <tr data-index="0">
+          <td style=""><%= comment.info.name %></td>
+          <td style=""><%= comment.info.email %></td>
+          <td style=""><%= comment.content %></td>
+
+          <td style=""><%=comment.prd_id.prd_name %></td>
+          <td class="form-group" style="">
+            <a href="#" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i></a>
+          </td>
+        </tr>
+  
+      <% } %>
+
+  <!--	End Comments List	-->
+

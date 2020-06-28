@@ -1,0 +1,47 @@
+<!--	Comments List	-->
+
+    <% for ( let comment of comments) {%>
+
+      <tr data-index="0">
+        <td style=""><%= index + 1 %></td>
+        <td style=""><%= comment.info.name %></td>
+        <td style=""><%= comment.info.email %></td>
+        <td style=""><%= comment.content %></td>
+      
+        <td style=""><%= comment.prd_id %></td>
+        <td class="form-group" style="">
+          <a href="#" class="btn btn-danger"
+            ><i class="glyphicon glyphicon-remove"></i
+          ></a>
+        </td>
+      </tr>
+
+    <% } %>
+
+<!--	End Comments List	-->
+
+<!--	End Product	-->
+<div id="pagination">
+
+  <ul class="pagination">
+    <% if (page > 1) { %>
+    <li class="page-item ">
+      <a data-page="<%= page - 1 %>" class="page-link" href="#"> Prev </a>
+    </li>
+    <% } %>
+    <% range.map((i) => { %>
+    <li class="page-item <%= page === i ? "active" : "" %>">
+      <% if (i === "...") { %>
+      <span class="page-link"> <%= i %> </span>
+      <% } else { %>
+      <a data-page="<%= i %>" class="page-link" href="#"><%= i %></a>
+      <% } %>
+    </li>
+    <% }) %>
+    <% if (page < totalPages) { %>
+    <li class="page-item ">
+      <a class="page-link" data-page="<%= page + 1 %>" href="#"> Next </a>
+    </li>
+    <% } %>
+  </ul>
+</div>
